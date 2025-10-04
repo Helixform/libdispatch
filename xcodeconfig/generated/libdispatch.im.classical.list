@@ -1,0 +1,6 @@
+# Generated from libdispatch.im.classical.yaml by build-list-rules.py
+# DO NOT EDIT - modify the .yaml source instead.
+
+PROCESS-NAME,Discord
+PROCESS-NAME,Telegram
+PROCESS-NAME,org.telegram.messenger

@@ -1,0 +1,35 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "domain_keyword": [
+        "360buy",
+        "alicdn",
+        "alimama",
+        "alipay",
+        "appzapp",
+        "baidupcs",
+        "bilibili",
+        "ccgslb",
+        "chinacache",
+        "duobao",
+        "jdpay",
+        "moke",
+        "qhimg",
+        "vpimg",
+        "xiami",
+        "xiaomi"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "-cn.feishucdn.com"
+      ]
+    },
+    {
+      "domain_regex": [
+        "^int[\\w-\\.]+iqiyi\\.com"
+      ]
+    }
+  ]
+}

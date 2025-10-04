@@ -1,0 +1,7 @@
+# Generated from libdispatch.apple.ipcidr.yaml by build-list-rules.py
+# DO NOT EDIT - modify the .yaml source instead.
+
+IP-CIDR,17.0.0.0/8
+IP-CIDR6,2403:300::/32
+IP-CIDR6,2620:149::/32
+IP-CIDR6,2a01:b740::/32
