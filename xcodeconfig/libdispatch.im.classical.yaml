@@ -1,0 +1,6 @@
+payload:
+  # Discord
+  - "PROCESS-NAME,Discord"
+  # Telegram
+  - "PROCESS-NAME,Telegram"
+  - "PROCESS-NAME,org.telegram.messenger"
