@@ -1,0 +1,9 @@
+# Generated from libdispatch.ms.classical.yaml by build-list-rules.py
+# DO NOT EDIT - modify the .yaml source instead.
+
+DOMAIN-KEYWORD,1drv
+PROCESS-NAME,OneDrive
+PROCESS-NAME,OneDriveUpdater
+DOMAIN-KEYWORD,1drv
+DOMAIN-KEYWORD,onedrive
+DOMAIN-KEYWORD,skydrive
