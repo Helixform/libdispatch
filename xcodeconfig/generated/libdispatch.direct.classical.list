@@ -1,0 +1,20 @@
+# Generated from libdispatch.direct.classical.yaml by build-list-rules.py
+# DO NOT EDIT - modify the .yaml source instead.
+
+DOMAIN-KEYWORD,360buy
+DOMAIN-KEYWORD,alicdn
+DOMAIN-KEYWORD,alimama
+DOMAIN-KEYWORD,alipay
+DOMAIN-KEYWORD,appzapp
+DOMAIN-KEYWORD,baidupcs
+DOMAIN-KEYWORD,bilibili
+DOMAIN-KEYWORD,ccgslb
+DOMAIN-KEYWORD,chinacache
+DOMAIN-KEYWORD,duobao
+DOMAIN-KEYWORD,jdpay
+DOMAIN-KEYWORD,moke
+DOMAIN-KEYWORD,qhimg
+DOMAIN-KEYWORD,vpimg
+DOMAIN-KEYWORD,xiami
+DOMAIN-KEYWORD,xiaomi
+URL-REGEX,^https?:\/\/int[\w-\.]+iqiyi\.com
