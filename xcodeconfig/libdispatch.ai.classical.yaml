@@ -1,0 +1,8 @@
+payload:
+  - "DOMAIN-KEYWORD,chatgpt"
+  - "DOMAIN-KEYWORD,openai"
+  - "DOMAIN-KEYWORD,anthropic"
+  - "DOMAIN-KEYWORD,claude"
+  - "DOMAIN-KEYWORD,gemini"
+  - "DOMAIN-KEYWORD,grok"
+  - "DOMAIN-KEYWORD,deepmind"

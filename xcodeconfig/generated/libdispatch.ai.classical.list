@@ -1,0 +1,10 @@
+# Generated from libdispatch.ai.classical.yaml by build-list-rules.py
+# DO NOT EDIT - modify the .yaml source instead.
+
+DOMAIN-KEYWORD,chatgpt
+DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,anthropic
+DOMAIN-KEYWORD,claude
+DOMAIN-KEYWORD,gemini
+DOMAIN-KEYWORD,grok
+DOMAIN-KEYWORD,deepmind
