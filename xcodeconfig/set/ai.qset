@@ -1,0 +1,125 @@
+# ai.qset
+# AI assistants, foundation model APIs, and AI coding platforms.
+
+# Domain Suffixes
++.ai.azure.com
++.ai.google.dev
++.ai.studio
++.aistudio.google.com
++.anthropic.com
++.antigravity-unleash.goog
++.antigravity.google
++.auth0.com
++.bard.google.com
++.bolt.new
++.cerebras.ai
++.chat.com
++.chatgpt.com
++.chatgpt.livekit.cloud
++.civitai.com
++.clau.de
++.claude.ai
++.claude.com
++.claudemcpclient.com
++.claudemcpcontent.com
++.claudeusercontent.com
++.client-api.arkoselabs.com
++.codeium.com
++.codeiumdata.com
++.cohere.ai
++.cohere.com
++.copilot.cloud.microsoft
++.copilot.microsoft.com
++.cursor-cdn.com
++.cursor.com
++.cursor.sh
++.cursorapi.com
++.deepmind.com
++.deepmind.google
++.dify.ai
++.elevenlabs.io
++.events.statsigapi.net
++.featuregates.org
++.fireworks.ai
++.flow.google
++.gemini.google
++.gemini.google.com
++.generativeai.google
++.githubcopilot.com
++.grazie.ai
++.grazie.aws.intellij.net
++.grok.com
++.groq.com
++.hf.co
++.hf.space
++.host.livekit.cloud
++.huggingface.co
++.identrust.com
++.intercom.io
++.intercomcdn.com
++.jetbrains.ai
++.jules.google
++.jules.google.com
++.labs.google
++.labs.google.com
++.lovable.dev
++.makersuite.google.com
++.manus.im
++.meta.ai
++.midjourney.com
++.mistral.ai
++.notebooklm.google
++.notebooklm.google.com
++.oaistatic.com
++.oaistatsig.com
++.oaiusercontent.com
++.openai.com
++.openaiapi-site.azureedge.net
++.openrouter.ai
++.perplexity.ai
++.perplexity.com
++.poe.com
++.poecdn.net
++.pplx.ai
++.qwen.ai
++.replicate.com
++.replicate.delivery
++.sora.com
++.stitch.withgoogle.com
++.suno.ai
++.suno.com
++.together.ai
++.together.xyz
++.turn.livekit.cloud
++.v0.app
++.v0.dev
++.windsurf.ai
++.windsurf.com
++.x.ai
+
+# Exact Domains
+full aisandbox-pa.googleapis.com
+full alkalicore-pa.clients6.google.com
+full alkalimakersuite-pa.clients6.google.com
+full antigravity-pa.googleapis.com
+full antigravity.googleapis.com
+full cloudaicompanion.googleapis.com
+full cloudcode-pa.googleapis.com
+full copilot-proxy.githubusercontent.com
+full copilot-telemetry.githubusercontent.com
+full daily-cloudcode-pa.sandbox.googleapis.com
+full geller-pa.googleapis.com
+full generativelanguage.googleapis.com
+full notebooklm-pa.googleapis.com
+full proactivebackend-pa.googleapis.com
+full robinfrontend-pa.googleapis.com
+full sydney.bing.com
+
+# Domain Keywords
+keyword anthropic
+keyword chatgpt
+keyword claude
+keyword deepmind
+keyword gemini
+keyword grok
+keyword openai

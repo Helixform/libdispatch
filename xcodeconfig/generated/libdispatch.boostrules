@@ -1,0 +1,101 @@
+{
+  "config": {
+    "geoIPEnabled": true,
+    "labelMap": [
+      {
+        "prefix": "*",
+        "target": "group:1"
+      },
+      {
+        "prefix": "ai",
+        "target": "group:1"
+      },
+      {
+        "prefix": "apns",
+        "target": "group:1"
+      },
+      {
+        "prefix": "apple",
+        "target": "direct"
+      },
+      {
+        "prefix": "microsoft",
+        "target": "direct"
+      },
+      {
+        "prefix": "streaming",
+        "target": "group:1"
+      },
+      {
+        "prefix": "social",
+        "target": "group:1"
+      },
+      {
+        "prefix": "global",
+        "target": "group:1"
+      },
+      {
+        "prefix": "direct",
+        "target": "direct"
+      },
+      {
+        "prefix": "proxy",
+        "target": "group:1"
+      },
+      {
+        "prefix": "reject",
+        "target": "reject"
+      }
+    ],
+    "runtimeSets": {},
+    "source": "custom",
+    "vars": {},
+    "version": 1
+  },
+  "customSource": "# Generated from set/*.qset by build-list-rules.py\n# DO NOT EDIT - modify xcodeconfig/set/*.qset instead.\n#\n# Module Routing Policy (Label Map defaults in libdispatch.boostrules):\n#   - Direct: @apple, @microsoft, @direct\n#   - Proxy:  @ai, @apns, @streaming, @social, @global, @proxy\n#   - Priority: @ai is evaluated first; @apns is evaluated before @apple\n#     (both domain and CIDR) so Apple's broad +.apple.com / 17.0.0.0/8\n#     entries do not swallow APNs push traffic.\n#\n# GeoIP (Boost Built-in Traffic Splitting):\n#   Mainland China GeoIP splitting is a built-in Boost capability enabled\n#   by default (`RulesConfig.geoIPEnabled`) and independent of `.qr` files.\n#   Traffic reaching `_ => @proxy` automatically checks `sets/geoip-cn.qset`\n#   (lazily resolving Fake-IP domains on the physical interface) and routes\n#   mainland China addresses as `@cn.ip` (`direct` unless remapped or turned\n#   off in Boost). Optional `geoip.cn` and `@cn` keywords remain available\n#   for custom routing if explicit GeoIP rule placement is ever needed.\n\nruleset \"libdispatch\" version \"1\"\n\nruntime set always-reject : domain\nruntime set always-direct : domain\n\nset local-names : domain = [suffix \"local\", suffix \"lan\", suffix \"home.arpa\", suffix \"localhost\"]\nset private-ptr : domain = [\n    suffix \"10.in-addr.arpa\", suffix \"168.192.in-addr.arpa\", suffix \"254.169.in-addr.arpa\",\n    suffix \"16.172.in-addr.arpa\", suffix \"17.172.in-addr.arpa\", suffix \"18.172.in-addr.arpa\",\n    suffix \"19.172.in-addr.arpa\", suffix \"20.172.in-addr.arpa\", suffix \"21.172.in-addr.arpa\",\n    suffix \"22.172.in-addr.arpa\", suffix \"23.172.in-addr.arpa\", suffix \"24.172.in-addr.arpa\",\n    suffix \"25.172.in-addr.arpa\", suffix \"26.172.in-addr.arpa\", suffix \"27.172.in-addr.arpa\",\n    suffix \"28.172.in-addr.arpa\", suffix \"29.172.in-addr.arpa\", suffix \"30.172.in-addr.arpa\",\n    suffix \"31.172.in-addr.arpa\"\n]\nset lan : cidr = [\n    10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16,\n    100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16,\n    ::1/128, fc00::/7, fe80::/10\n]\n\nset ai        = data \"sets/ai.qset\"\nset apns      = data \"sets/apns.qset\"\nset apple     = data \"sets/apple.qset\"\nset microsoft = data \"sets/microsoft.qset\"\nset streaming = data \"sets/streaming.qset\"\nset social    = data \"sets/social.qset\"\nset global    = data \"sets/global.qset\"\nset direct    = data \"sets/direct.qset\"\n\nresolver system     = system\nresolver cloudflare = doh \"https://1.1.1.1/dns-query\" via @proxy\n\n# 198.19.0.0/16 keeps clear of Boost's tunnel infrastructure range 198.18.0.0/24.\npool fake = fakeip 198.19.0.0/16 ttl=5\n\ndns {\n  table main {\n    qname == \"use-application-dns.net\"               => block nxdomain\n    qname in always-reject                           => block nxdomain\n    qname in always-direct                           => label @direct, forward system\n    qname in local-names or qname in private-ptr     => label @direct, forward system\n    qtype == AAAA or qtype == HTTPS or qtype == SVCB => block empty\n    qtype == A                                       => fakeip fake\n    _                                                => forward cloudflare\n  }\n}\n\nroute {\n  table main {\n    domain in always-reject => @reject\n    domain in always-direct => @direct\n    dns.label exists        => dns.label\n    dst.ip in lan           => @direct\n\n    # Applications\n    app in microsoft => @microsoft\n    app in streaming => @streaming\n    app in social    => @social\n\n    # Domains (AI first; APNs before Apple)\n    domain in ai        => @ai\n    domain in apns      => @apns\n    domain in apple     => @apple\n    domain in microsoft => @microsoft\n    domain in streaming => @streaming\n    domain in social    => @social\n    domain in global    => @global\n    domain in direct    => @direct\n\n    # Destination IP CIDRs (APNs before Apple)\n    dst.ip in apns      => @apns\n    dst.ip in apple     => @apple\n    dst.ip in streaming => @streaming\n    dst.ip in social    => @social\n    dst.ip in direct    => @direct\n\n    # Catch-all (Boost's built-in GeoIP splits mainland China traffic before @proxy)\n    _ => @proxy\n  }\n}\n\ntest {\n  route \"ad.example:443/tcp\" with always-reject = [\"ad.example\"]     => @reject\n  route \"corp.example:443/tcp\" with always-direct = [\"corp.example\"] => @direct\n  route \"x.example:443/tcp\" with dns.label = @direct                 => @direct\n  route \"192.168.1.1:443/tcp\"                                        => @direct\n  route \"api.openai.com:443/tcp\"                                     => @ai\n  route \"claude.ai:443/tcp\"                                          => @ai\n  route \"copilot.microsoft.com:443/tcp\"                              => @ai\n  route \"sydney.bing.com:443/tcp\"                                    => @ai\n  route \"1-courier.push.apple.com:5223/tcp\"                          => @apns\n  route \"17.57.144.1:5223/tcp\"                                       => @apns\n  route \"[2403:300:a42::1]:5223/tcp\"                                 => @apns\n  route \"www.apple.com:443/tcp\"                                      => @apple\n  route \"17.253.144.10:443/tcp\"                                      => @apple\n  route \"www.microsoft.com:443/tcp\"                                  => @microsoft\n  route \"1.2.3.4:443/tcp\" with app = \"OneDrive\"                      => @microsoft\n  route \"www.youtube.com:443/tcp\"                                    => @streaming\n  route \"intl.iqiyi.com:443/tcp\"                                     => @streaming\n  route \"web.telegram.org:443/tcp\"                                   => @social\n  route \"91.108.4.1:443/tcp\"                                         => @social\n  route \"www.google.com:443/tcp\"                                     => @global\n  route \"www.baidu.com:443/tcp\"                                      => @direct\n  route \"unmatched.example:443/tcp\"                                  => @proxy\n  route \"8.8.8.8:443/tcp\"                                            => @proxy\n\n  labels { \"*\" => proxied, \"apple\" => direct, \"direct\" => direct, \"microsoft\" => direct, \"reject\" => reject }\n  dns \"api.openai.com A\"          => fakeip\n  dns \"www.baidu.com A\"           => fakeip\n  dns \"api.openai.com AAAA\"       => block empty\n  dns \"api.openai.com HTTPS\"      => block empty\n  dns \"use-application-dns.net A\" => block nxdomain\n  dns \"ad.example A\" with always-reject = [\"ad.example\"] => block nxdomain\n  dns \"printer.local A\" with answer system = [192.168.1.9] => accept system, label @direct\n  dns \"corp.example A\" with always-direct = [\"corp.example\"], answer system = [10.0.0.5] => accept system, label @direct\n  dns \"example.com MX\" with answer cloudflare = [] => accept cloudflare\n}\n",
+  "kind": "boost-rules",
+  "localSets": [],
+  "remoteSets": [
+    {
+      "interval": 24,
+      "name": "ai.qset",
+      "url": "https://cdn.jsdelivr.net/gh/Helixform/libdispatch@dev/xcodeconfig/set/ai.qset"
+    },
+    {
+      "interval": 24,
+      "name": "apns.qset",
+      "url": "https://cdn.jsdelivr.net/gh/Helixform/libdispatch@dev/xcodeconfig/set/apns.qset"
+    },
+    {
+      "interval": 24,
+      "name": "apple.qset",
+      "url": "https://cdn.jsdelivr.net/gh/Helixform/libdispatch@dev/xcodeconfig/set/apple.qset"
+    },
+    {
+      "interval": 24,
+      "name": "direct.qset",
+      "url": "https://cdn.jsdelivr.net/gh/Helixform/libdispatch@dev/xcodeconfig/set/direct.qset"
+    },
+    {
+      "interval": 24,
+      "name": "global.qset",
+      "url": "https://cdn.jsdelivr.net/gh/Helixform/libdispatch@dev/xcodeconfig/set/global.qset"
+    },
+    {
+      "interval": 24,
+      "name": "microsoft.qset",
+      "url": "https://cdn.jsdelivr.net/gh/Helixform/libdispatch@dev/xcodeconfig/set/microsoft.qset"
+    },
+    {
+      "interval": 24,
+      "name": "social.qset",
+      "url": "https://cdn.jsdelivr.net/gh/Helixform/libdispatch@dev/xcodeconfig/set/social.qset"
+    },
+    {
+      "interval": 24,
+      "name": "streaming.qset",
+      "url": "https://cdn.jsdelivr.net/gh/Helixform/libdispatch@dev/xcodeconfig/set/streaming.qset"
+    }
+  ],
+  "version": 1
+}

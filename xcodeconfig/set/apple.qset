@@ -1,0 +1,54 @@
+# apple.qset
+# Apple services, iCloud, App Store, Apple Music/TVCDN, and AS714 IP blocks (excluding APNs).
+
+# Domain Suffixes
++.aaplimg.com
++.ampaeservices.com
++.apple-cloudkit.com
++.apple-dns.net
++.apple-livephotoskit.com
++.apple-mapkit.com
++.apple.co
++.apple.com
++.apple.com.akadns.net
++.apple.com.cn
++.apple.music
++.apple.news
++.applesweetshop.com
++.appleworldwidevideo.com
++.appsto.re
++.appstore.com
++.apzones.com
++.beats1.com
++.cdn-apple.com
++.icloud-content.com
++.icloud-sandbox.com
++.icloud.com
++.icloud.com.akadns.net
++.icloud.com.cn
++.itunes.com
++.ls-apple.com.akadns.net
++.me.com
++.mzstatic.com
++.shazam.com
++.swift.org
++.webkit.org
+
+# Exact Domains
+full apple.comscoreresearch.com
+full p-events-delivery.akamaized.net
+
+# IP CIDRs
+17.0.0.0/8
+63.92.224.0/19
+65.199.22.0/23
+139.178.128.0/18
+144.178.0.0/19
+144.178.36.0/22
+144.178.48.0/20
+192.35.50.0/24
+198.183.17.0/24
+205.180.175.0/24
+2403:300::/32
+2620:149::/32
+2a01:b740::/32

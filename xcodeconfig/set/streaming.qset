@@ -1,0 +1,400 @@
+# streaming.qset
+# Overseas video, music, anime, radio, sports, and live streaming platforms.
+
+# Global Major OTT (Netflix, YouTube, Disney+, Prime Video, Max/HBO, Hulu, Paramount+, Peacock, Discovery+)
++.aiv-cdn.net
++.aiv-delivery.net
++.bamgrid.com
++.cbsaavideo.com
++.cbsi.com
++.cbsivideo.com
++.disco-api.com
++.discomax.com
++.discoveryplus.com
++.disney-plus.net
++.disneyplus.com
++.disneystreaming.com
++.dssott.com
++.fast.com
++.ggpht.com
++.googlevideo.com
++.gvt1.com
++.hbo.com
++.hbogo.com
++.hbogoasia.com
++.hbogoasia.hk
++.hbogoasia.tw
++.hbomax.com
++.hbomaxcdn.com
++.hbonow.com
++.hulu.com
++.huluim.com
++.hulustream.com
++.max.com
++.netflix.com
++.netflix.net
++.netflixdnstest0.com
++.netflixdnstest1.com
++.netflixdnstest10.com
++.netflixdnstest2.com
++.netflixdnstest3.com
++.netflixdnstest4.com
++.netflixdnstest5.com
++.netflixdnstest6.com
++.netflixdnstest7.com
++.netflixdnstest8.com
++.netflixdnstest9.com
++.netflixinvestor.com
++.netflixstudios.com
++.netflixtechblog.com
++.nflxext.com
++.nflximg.com
++.nflximg.net
++.nflxso.net
++.nflxvideo.net
++.paramountplus.com
++.peacocktv.com
++.pplusstatic.com
++.primevideo.com
++.pv-cdn.net
++.sho.com
++.showtime.com
++.warnermediacdn.com
++.wide-youtube.l.google.com
++.youtu.be
++.youtube-nocookie.com
++.youtube.com
++.youtubeeducation.com
++.youtubegaming.com
++.youtubei.googleapis.com
++.youtubekids.com
++.yt.be
++.ytimg.com
+full atv-ps.amazon.com
+full avodmp4s3ww-a.akamaihd.net
+full cdn.registerdisney.go.com
+full fls-na.amazon.com
+
+# Hong Kong & Macau (myTV SUPER, TVB, Viu / ViuTV / Now E, HOY TV, RTHK, MOOV, JOOX)
++.encoretvb.com
++.hdtvb.net
++.hoy.tv
++.i-cable.com
++.joox.com
++.moov-music.com
++.mytvsuper.com
++.now.com
++.nowe.com
++.nowestatic.com
++.nowtv.hk
++.rthk.hk
++.rthk.org.hk
++.tvb.com
++.tvbanywhere.com
++.tvbc.com.hk
++.tvbeventpower.com.hk
++.tvbusa.com
++.tvbweekly.com
++.viu.com
++.viu.tv
++.viutv.hk
+full d1k2us671qcoau.cloudfront.net
+full d2anahhhmp1ffz.cloudfront.net
+full dfp6rglgjqszk.cloudfront.net
+full mytvsuperlimited.hb.omtrdc.net
+full mytvsuperlimited.sc.omtrdc.net
+
+# Taiwan (Bahamut, KKTV, LiTV, 4gTV, LINE TV, Hami Video, friDay, CatchPlay+, MyVideo, Ofiii, PTS+, GagaOOLala)
++.4gtv.tv
++.bahamut.com.tw
++.catchplay.com
++.friday.tw
++.gagaoolala.com
++.gamer.com.tw
++.hinet.net
++.kk.stream
++.kktv.com.tw
++.kktv.me
++.linetv.tw
++.litv.tv
++.myvideo.net.tw
++.ofiii.com
++.ptsplus.tv
+full bahamut.akamaized.net
+full d2ivmxp5z2ww0n.cloudfront.net
+full d3c7rimkq79yfu.cloudfront.net
+
+# Japan (ABEMA, TVer, U-NEXT / Paravi, Hulu JP, DMM TV, Niconico, Lemino, d-anime, FOD, WOWOW, Telasa, NHK+, Radiko)
++.abema-global.com
++.abema.io
++.abema.tv
++.abematv.akamaized.net
++.ameba.jp
++.animestore.docomo.ne.jp
++.b-ch.com
++.dmc.nico
++.dmkt-sp.jp
++.dmm-extension.com
++.dmm.co.jp
++.dmm.com
++.dmmapis.com
++.dogatch.jp
++.fujitv.co.jp
++.gorin.jp
++.happyon.jp
++.hayabusa.dev
++.hayabusa.io
++.hayabusa.media
++.hjholdings.jp
++.hulu.jp
++.lemino.docomo.ne.jp
++.linear-abematv.akamaized.net
++.mirrativ.com
++.nhk-ondemand.jp
++.nhk.jp
++.nhk.or.jp
++.nicodic.jp
++.nicomanga.jp
++.nicoseiga.jp
++.nicovideo.jp
++.nimg.jp
++.nxtv.jp
++.openrec.tv
++.paravi.jp
++.radiko.jp
++.radionikkei.jp
++.screens-lab.jp
++.showroom-cdn.com
++.showroom-live.com
++.simg.jp
++.smartstream.ne.jp
++.socdm.com
++.stagecrowd.live
++.streaks.jp
++.tbs.co.jp
++.telasa.jp
++.tv-asahi.co.jp
++.tv-tokyo.co.jp
++.tver.co.jp
++.tver.jp
++.twitcasting.tv
++.unext.jp
++.videopass.jp
++.vod-abematv.akamaized.net
++.wowow.co.jp
++.yb.uncn.jp
++.zaiko.io
+full ds-linear-abematv.akamaized.net
+full ds-vod-abematv.akamaized.net
+
+# South Korea (Coupang Play, TVING, Wavve, Watcha, SOOP / AfreecaTV, Chzzk / Naver TV, Weverse, Viki, Kocowa, KR Music)
++.afreecatv.com
++.bugs.co.kr
++.chzzk.naver.com
++.coupangplay.com
++.frograms.com
++.genie.co.kr
++.kocowa.com
++.melon.com
++.meloncdn.com
++.music-flo.com
++.navernow.com
++.pooq.co.kr
++.rmcnmv.naver.com
++.sooplive.co.kr
++.sooplive.com
++.tv.kakao.com
++.tv.naver.com
++.tving.com
++.vibe.naver.com
++.viki.com
++.viki.io
++.vlive.tv
++.watcha.com
++.wavve.com
++.weverse.co
++.weverse.io
+
+# Southeast & South Asia (WeTV, iQIYI Intl, Bilibili SEA, MangoTV Intl, Youku Intl, Vidio, TrueID, mewatch, iWantTFC, Hotstar)
++.astro.com.my
++.bilibili.tv
++.biliintl.co
++.dmpcdn.com
++.hotstar.com
++.hotstarext.com
++.iflix.com
++.inter.iqiyi.com
++.intl.iqiyi.com
++.intl.mgtv.com
++.iq.com
++.iwanttfc.com
++.jiocinema.com
++.mewatch.sg
++.shahid.mbc.net
++.sonyliv.com
++.sooka.my
++.toggle.sg
++.trueid.in.th
++.trueid.net
++.vidio.com
++.wetv.vip
++.wetvinfo.com
++.youku.tv
++.zee5.com
+full apiintl.biliapi.net
+full intl-rcd.iqiyi.com
+full intl-subscription.iqiyi.com
+full wetv.qq.com
+
+# Global Music, Podcasts, Live, Anime, Sports & Regional Broadcasters (Spotify, TikTok, Twitch, Crunchyroll, UK/AU/US)
++.10play.com.au
++.7plus.com.au
++.9now.com.au
++.amcplus.com
++.audible.co.jp
++.audible.co.uk
++.audible.com
++.bbc.co.uk
++.bbc.pdn.tritondigital.com
++.bbci.co.uk
++.bidi.net.uk
++.binge.com.au
++.britbox.com
++.byteoversea.com
++.byteoversea.net
++.c4assets.com
++.castbox.fm
++.channel4.com
++.channel5.com
++.crunchyroll.com
++.curiositystream.com
++.dazn-api.com
++.dazn.com
++.dazndn.com
++.deezer.com
++.dishworld.com
++.dtci.co
++.dtci.technology
++.dzcdn.net
++.espn.com
++.espn.net
++.espncdn.com
++.ext-twitch.tv
++.f1tv.formula1.com
++.fubo.tv
++.funimation.com
++.hidive.com
++.iheart.com
++.indazn.com
++.itv.com
++.itvstatic.com
++.itvx.com
++.iview.abc.net.au
++.jtvnw.net
++.kayosports.com.au
++.kfs.io
++.kkbox.com
++.kkbox.com.tw
++.mlb.com
++.movetv.com
++.mubi.com
++.mubicdn.net
++.musical.ly
++.my5.tv
++.nba.com
++.nebula.app
++.nebula.tv
++.nfl.com
++.nhl.com
++.nowtv.com
++.p-cdn.us
++.pandora.com
++.plex.tv
++.pluto.tv
++.pocketcasts.com
++.pscdn.co
++.qobuz.com
++.roku.com
++.sbs.com.au
++.scdn.co
++.sky.com
++.sling.com
++.sndcdn.com
++.soundcloud.com
++.spoti.fi
++.spotify.com
++.spotifycdn.com
++.spotifycdn.net
++.stan.com.au
++.starz.com
++.tidal.com
++.tidalhifi.com
++.tik-tokapi.com
++.tiktok.com
++.tiktokcdn-eu.com
++.tiktokcdn-us.com
++.tiktokcdn.com
++.tiktokd.net
++.tiktokd.org
++.tiktokv.com
++.tiktokv.us
++.ttvnw.net
++.ttwstatic.com
++.tubitv.com
++.tunein.com
++.tunein.streamguys1.com
++.twitch.tv
++.twitchcdn.net
++.ufc.tv
++.vimeo.com
++.vimeocdn.com
++.vrv.co
++.watchespn.com
++.wimpmusic.com
+full aod-pod-uk-live.akamaized.net
+full as-dash-uk-live.akamaized.net
+full as-hls-uk-live.akamaized.net
+full audio-ak-spotify-com.akamaized.net
+full audio4-ak-spotify-com.akamaized.net
+full espn.hb.omtrdc.net
+full espndotcom.tt.omtrdc.net
+full heads-ak-spotify-com.akamaized.net
+full heads4-ak-spotify-com.akamaized.net
+full p16-tiktokcdn-com.akamaized.net
+full ve-dash-uk-live.akamaized.net
+full ve-uhd-push-uk-live.akamaized.net
+full vod-dash-uk-live.akamaized.net
+full vod-dash-ww-live.akamaized.net
+full vod-hls-uk-live.akamaized.net
+full vod-sub-uk-live.akamaized.net
+full vod-thumb-uk-live.akamaized.net
+full vod-thumb-ww-live.akamaized.net
+full vs-cmaf-push-uk-live.akamaized.net
+full vs-cmaf-pushb-ww-live.akamaized.net
+full vs-hls-push-uk-live.akamaized.net
+full vs-hls-pushb-uk-live.akamaized.net
+
+# Domain Regexes
+regex ^int[\w.-]+\.iqiyi\.com$
+
+# IP CIDRs (Netflix AS2906)
+8.41.4.0/24
+23.246.0.0/18
+37.77.184.0/21
+45.57.0.0/17
+64.120.128.0/17
+66.197.128.0/17
+69.53.224.0/19
+108.175.32.0/20
+185.2.220.0/22
+185.9.188.0/22
+192.173.64.0/18
+198.38.96.0/19
+198.45.48.0/20
+207.45.72.0/22
+208.75.76.0/22
+2607:fb10::/32
+2a00:86c0::/32
+
+# Applications
+app Spotify
