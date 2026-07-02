@@ -17,4 +17,5 @@ DOMAIN-KEYWORD,qhimg
 DOMAIN-KEYWORD,vpimg
 DOMAIN-KEYWORD,xiami
 DOMAIN-KEYWORD,xiaomi
+DOMAIN-SUFFIX,-cn.feishucdn.com
 URL-REGEX,^https?:\/\/int[\w-\.]+iqiyi\.com
