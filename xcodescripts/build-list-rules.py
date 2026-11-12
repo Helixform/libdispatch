@@ -368,10 +368,12 @@ def to_qrule_source(ordered_sets: list[tuple[Path, MixedSet]]) -> str:
         "# GeoIP (Boost Built-in Traffic Splitting):",
         "#   Mainland China GeoIP splitting is a built-in Boost capability enabled",
         "#   by default (`RulesConfig.geoIPEnabled`) and independent of `.qr` files.",
-        "#   Traffic reaching `_ => @proxy` automatically checks `sets/geoip-cn.qset`",
-        "#   (lazily resolving Fake-IP domains on the physical interface) and routes",
-        "#   mainland China addresses as `@cn.ip` (`direct` unless remapped or turned",
-        "#   off in Boost). Optional `geoip.cn` and `@cn` keywords remain available",
+        "#   When enabled, Boost inserts GeoIP `cn` matching immediately before the",
+        "#   user-defined fallback (`_ => @proxy`): if no explicit rule matches, it",
+        "#   first checks `sets/geoip-cn.qset` (lazily resolving Fake-IP domains on",
+        "#   the physical interface) and routes mainland China traffic as `@cn.ip`",
+        "#   (`direct` unless remapped); `_ => @proxy` is only used when GeoIP also",
+        "#   fails to match. Optional `geoip.cn` and `@cn` keywords remain available",
         "#   for custom routing if explicit GeoIP rule placement is ever needed.",
         "",
         'ruleset "libdispatch" version "1"',
@@ -491,6 +493,8 @@ def to_qrule_source(ordered_sets: list[tuple[Path, MixedSet]]) -> str:
         lines.extend(
             [
                 '  route "1-courier.push.apple.com:5223/tcp"                          => @apns',
+                '  route "1.push-apple.com.akadns.net:5223/tcp"                       => @apns',
+                '  route "1.courier-push-apple.com.akadns.net:5223/tcp"               => @apns',
                 '  route "17.57.144.1:5223/tcp"                                       => @apns',
                 '  route "[2403:300:a42::1]:5223/tcp"                                 => @apns',
             ]
@@ -499,6 +503,13 @@ def to_qrule_source(ordered_sets: list[tuple[Path, MixedSet]]) -> str:
         lines.extend(
             [
                 '  route "www.apple.com:443/tcp"                                      => @apple',
+                '  route "bag-cdn.itunes-apple.com.akadns.net:443/tcp"                => @apple',
+                '  route "amp-api-edge-lb.itunes-apple.com.akadns.net:443/tcp"        => @apple',
+                '  route "amp-api-search-edge.apps-lb.itunes-apple.com.akadns.net:443/tcp" => @apple',
+                '  route "is-ssl.mzstatic.com.itunes-apple.com.akadns.net:443/tcp"    => @apple',
+                '  route "entitlements.edge-itunes-apple.com.akadns.net:443/tcp"      => @apple',
+                '  route "gs-loc-apple.com.akadns.net:443/tcp"                        => @apple',
+                '  route "updates-http.cdn-apple.com.akadns.net:443/tcp"              => @apple',
                 '  route "17.253.144.10:443/tcp"                                      => @apple',
             ]
         )

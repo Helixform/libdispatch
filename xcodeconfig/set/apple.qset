@@ -8,10 +8,15 @@
 +.apple-dns.net
 +.apple-livephotoskit.com
 +.apple-mapkit.com
++.apple-support.akadns.net
++.apple.akadns.net
 +.apple.co
 +.apple.com
 +.apple.com.akadns.net
 +.apple.com.cn
++.apple.com.edgekey.net
++.apple.com.edgekey.net.globalredir.akadns.net
++.apple.com.edgesuite.net
 +.apple.music
 +.apple.news
 +.applesweetshop.com
@@ -21,15 +26,21 @@
 +.apzones.com
 +.beats1.com
 +.cdn-apple.com
++.cdn-apple.com.akadns.net
++.edge-itunes-apple.com.akadns.net
 +.icloud-content.com
 +.icloud-sandbox.com
 +.icloud.com
 +.icloud.com.akadns.net
 +.icloud.com.cn
++.icloud.com.edgekey.net
++.itunes-apple.com.akadns.net
 +.itunes.com
 +.ls-apple.com.akadns.net
 +.me.com
 +.mzstatic.com
++.mzstatic.com.akadns.net
++.mzstatic.com.edgesuite.net
 +.shazam.com
 +.swift.org
 +.webkit.org
@@ -37,6 +48,9 @@
 # Exact Domains
 full apple.comscoreresearch.com
 full p-events-delivery.akamaized.net
+
+# Domain Keywords
+keyword -apple.com.akadns.net
 
 # IP CIDRs
 17.0.0.0/8

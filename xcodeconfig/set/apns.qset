@@ -2,6 +2,7 @@
 # Apple Push Notification service (APNs) domains and official IP ranges.
 
 # Domain Suffixes
++.courier-push-apple.com.akadns.net
 +.push-apple.com.akadns.net
 +.push.apple.com
 
